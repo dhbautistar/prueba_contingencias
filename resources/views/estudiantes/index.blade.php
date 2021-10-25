@@ -39,5 +39,6 @@
   @endforeach  
   </tbody>
 </table>
+{{ $estudiantes->links() }}
 </body>
 </html>

@@ -34,7 +34,7 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $estudiantes = estudiante::orderBy('id', 'asc')->paginate(5);
+        $estudiantes = estudiante::orderBy('id', 'asc')->paginate(2);
         $programas = new programa();
         
         return view('estudiantes.index', compact('estudiantes','programas'));

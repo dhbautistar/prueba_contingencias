@@ -28,7 +28,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <!-- <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a> -->
                     @else
                         <!-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
@@ -43,22 +43,22 @@
                 @csrf
                 <div class="form-group">
                     <label for="nombres">Nombres</label>
-                    <input class="form-control"  type="text" name="nombres" placeholder="Ingresar nombres">
+                    <input class="form-control"  type="text" name="nombres" placeholder="Ingresar nombres" required>
                 </div>
 
                 <div class="form-group">
                     <label for="apellidos">Apellidos</label>
-                    <input class="form-control" type="text" name="apellidos" placeholder="Ingresar apellidos">
+                    <input class="form-control" type="text" name="apellidos" placeholder="Ingresar apellidos" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input class="form-control" type="email" name="email" placeholder="email">
+                    <input class="form-control" type="email" name="email" placeholder="email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Telefono</label>
-                    <input class="form-control" type="text" name="telefono" placeholder="Ingresar telefono">
+                    <input class="form-control" type="text" name="telefono" placeholder="Ingresar telefono" required>
                 </div>
 
                 <div class="form-group">
@@ -70,7 +70,7 @@
                     </select>
                 </div>
 
-                <button  type="submit" class="btn btn-primary">Aplicar</button>
+                <button type="submit" class="btn btn-primary">Aplicar</button>
             </form>
 
             <!-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">

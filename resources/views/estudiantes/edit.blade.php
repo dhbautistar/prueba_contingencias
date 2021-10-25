@@ -16,22 +16,22 @@
         @method('PUT')
         <div class="form-group">
             <label for="nombres">Nombres</label>
-            <input class="form-control" type="text" name="nombres" value="{{$estudiante->nombres}}" placeholder="Ingresar nombres">
+            <input class="form-control" type="text" name="nombres" value="{{$estudiante->nombres}}" placeholder="Ingresar nombres" required>
         </div>
 
         <div class="form-group">
             <label for="apellidos">Apellidos</label>
-            <input class="form-control" type="text" name="apellidos" value="{{$estudiante->apellidos}}" placeholder="Ingresar apellidos">
+            <input class="form-control" type="text" name="apellidos" value="{{$estudiante->apellidos}}" placeholder="Ingresar apellidos" required>
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" value="{{$estudiante->email}}" placeholder="email">
+            <input class="form-control" type="email" name="email" value="{{$estudiante->email}}" placeholder="email" required>
         </div>
         
         <div class="form-group">
             <label for="telefono">Telefono</label>
-            <input class="form-control" type="text" name="telefono" value="{{$estudiante->telefono}}" placeholder="Ingresar telefono">
+            <input class="form-control" type="text" name="telefono" value="{{$estudiante->telefono}}" placeholder="Ingresar telefono" required>
         </div>
 
         <div class="form-group">

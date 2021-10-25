@@ -50,7 +50,7 @@
         <div class="form-group">
             <label for="contactado">Estudiante Contactado</label>
             <select class="form-control" name="contactado">
-            <option value="0" selected>NO</option>
+            <option value="2" selected>NO</option>
                 <option value="1">SI</option>
             </select>
         </div>

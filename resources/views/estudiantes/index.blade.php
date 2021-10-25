@@ -12,6 +12,23 @@
 <body>
     <div class="container">
     <h1>Estudiantes</h1>
+    <form action="">
+      <div class="row">
+        <div class="col-6">
+          <input class="form-control" type="text" name="filtro"  placeholder="Buscar por: Nombre, Apellidos, Email, telefono, contactado, programa">
+        </div>
+        <div class="col-3">
+          <select class="form-control" name="contactado">
+            <option value="">Seleccione Contactado...</option>
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+        <div class="col-3">
+          <button type="submit" class="btn btn-info col-5" >Buscar</button>
+        </div>
+      </div>
+    </form>
       <table class="table table-dark">
       <thead>
         <tr>
@@ -31,7 +48,7 @@
           <td>{{$estudiante->apellidos}}</td>
           <td>{{$estudiante->email}}</td>
           <td>{{$estudiante->telefono}}</td>
-          @if($estudiante->contactado == 0)
+          @if($estudiante->contactado == 2)
             <td>No</td>
           @elseif($estudiante->contactado == 1)
             <td>Si</td>

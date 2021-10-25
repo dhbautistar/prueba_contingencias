@@ -16,7 +16,7 @@ class EstudianteController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
 
@@ -25,9 +25,21 @@ class EstudianteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $estudiantes = estudiante::orderBy('id', 'asc')->paginate(2);
+        if ($request->contactado) {
+            $estudiantes = estudiante::where('contactado', $request->contactado)->paginate(2);
+        }
+        if ($request->filtro) {
+            $estudiantes = estudiante::orWhere('email', $request->filtro)
+                ->orWhere('nombres', $request->filtro)
+                ->orWhere('apellidos', $request->filtro)
+                ->orWhere('telefono', $request->filtro)
+                ->paginate(2);
+        } else if (!$request->filtro && !$request->contactado) {
+            $estudiantes = estudiante::orderBy('id', 'asc')->paginate(2);
+        }
+
         $programas = new programa();
         
         return view('estudiantes.index', compact('estudiantes','programas'));
@@ -60,7 +72,7 @@ class EstudianteController extends Controller
         $estudiante->email = $request->email;
         $estudiante->telefono = $request->telefono;
         $estudiante->programa_id = $request->programa_id;
-        $estudiante->contactado = '0';
+        $estudiante->contactado = '2';
         
 
         $estudiante->save();

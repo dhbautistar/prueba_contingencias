@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\EstudianteController;
 // Route::get('/', function () {
 //     return view('welcome');
 // })->name('welcome');
-Route::get('/', [App\Http\Controllers\EstudianteController::class, 'welcome'])->name('welcome');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome'])->name('welcome');
 
 Route::resource('estudiantes', EstudianteController::class)->names('estudiantes');
 

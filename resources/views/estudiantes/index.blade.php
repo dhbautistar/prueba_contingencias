@@ -10,8 +10,8 @@
     <title>estudiantes</title>
 </head>
 <body>
-    <h1>estudiantes</h1>
     <div class="container">
+    <h1>Estudiantes</h1>
       <table class="table table-dark">
       <thead>
         <tr>

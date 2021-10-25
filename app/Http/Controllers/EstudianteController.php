@@ -16,16 +16,9 @@ class EstudianteController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
-
-    public function welcome()
-    {
-        $programas =  programa::all();
-        
-        return view('welcome', compact('programas'));
-    }
 
     /**
      * Display a listing of the resource.

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -27,37 +30,47 @@
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <!-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
+                        @endif -->
                     @endauth
                 </div>
             @endif
 
             <form action="{{route('estudiantes.store')}}" method="post">
                 @csrf
-                <label for="nombres">Nombres</label>
-                <input type="text" name="nombres" placeholder="Ingresar nombres">
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input class="form-control"  type="text" name="nombres" placeholder="Ingresar nombres">
+                </div>
 
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" placeholder="Ingresar apellidos">
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input class="form-control" type="text" name="apellidos" placeholder="Ingresar apellidos">
+                </div>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="email">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="email">
+                </div>
 
-                <label for="telefono">Telefono</label>
-                <input type="text" name="telefono" placeholder="Ingresar telefono">
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input class="form-control" type="text" name="telefono" placeholder="Ingresar telefono">
+                </div>
 
-                <label for="programas">programas</label>
-                <select name="programa_id">
-                @foreach ($programas as $programa)
-                <option value="{{$programa->id}}">{{$programa->nombre}}</option>
-                @endforeach
-                </select>
-                
-                <button type="submit" class="btn btn-primary">Aplicar</button>
+                <div class="form-group">
+                    <label for="programas">programas</label>
+                    <select class="form-control"  name="programa_id">
+                    @foreach ($programas as $programa)
+                    <option class="form-control"  value="{{$programa->id}}">{{$programa->nombre}}</option>
+                    @endforeach
+                    </select>
+                </div>
+
+                <button class="form-control"  type="submit" class="btn btn-primary">Aplicar</button>
             </form>
 
             <!-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -154,3 +167,4 @@
         </div>
     </body>
 </html>
+@endsection

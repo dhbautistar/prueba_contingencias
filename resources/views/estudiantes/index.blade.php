@@ -28,7 +28,7 @@
       <td>{{$estudiante->email}}</td>
       <td>{{$estudiante->telefono}}</td>
       <td>{{$estudiante->contactado}}</td>
-      <td>{{$estudiante->programa_id}}</td>
+      <td>{{$estudiante->programas->nombre}}</td>
       <td><a href="{{route('estudiantes.edit', $estudiante->id)}}">Editar</a>
       <form action="{{route('estudiantes.destroy',$estudiante->id)}}" method="POST">
         @csrf
